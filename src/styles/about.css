@@ -1,0 +1,97 @@
+.about{
+    height: 500px;
+    background-size: cover;
+    margin: 0px;
+    border-top-right-radius: 200px;
+    border-bottom-left-radius:200px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(9, 5, 255, 0.571),rgba(96, 32, 5, 0.67))
+    ,url("https://img.freepik.com/free-photo/pile-3d-play-button-logos_1379-880.jpg?w=900&t=st=1680018585~exp=1680019185~hmac=a286c4718fd4a15ecbde75155e94eb379333d9c054265a3993e276a17973ea39");
+}
+.about h1{
+    color: white;
+    font-size: 100px;
+    margin-left: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.mission{
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    width: 70%;
+    height: 500px;
+    margin-left: 5%;
+    padding-left: 35px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin-bottom: 30px;
+    background-image: linear-gradient(rgba(7, 50, 241, 0.456),rgba(10, 98, 42, 0.588)),url("https://cdn.wallpapersafari.com/28/69/NaRZJv.jpg");
+}
+.mission img{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.mission p{
+    font-size: 25px;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+.aboutt{
+    text-align: center;
+    position: relative;
+    top: 70px;
+    padding-bottom: 40px;
+    background-color: rgba(191, 225, 71, 0.588);
+}
+.story{
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    width: 70%;
+    height: 500px;
+    margin-left: 25%;
+    padding-left: 35px;
+    border-bottom-left-radius: 28%;
+    border-bottom-right-radius: 28%;
+    border-top-right-radius: 28%;
+
+    margin-bottom: 30px;
+    background-image: linear-gradient(rgba(7, 50, 241, 0.456),rgba(10, 98, 42, 0.588)),url("https://cdn.wallpapersafari.com/28/69/NaRZJv.jpg");
+}
+.story p{
+    font-size: 20px;
+    color: rgb(214, 214, 214);
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 15px;
+}
+.story img{
+    border-bottom-right-radius: 28%;
+    border-top-right-radius: 28%;
+}
+.abbb h1{
+    font-size: 20px;
+}
+.abbb{
+    padding: 10px 0px;
+    background-color: rgba(252, 9, 9, 0.736);
+}
+.history{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 25px;
+}
+.bgmi{
+    height: 320px;
+    width: 400px;
+    border: 2px solid rgb(255, 0, 0);
+    color: blackwhite;
+    margin: 0px 20px;
+    padding: 5px;
+}
+.bgmi p{
+    color:blue;
+}
+.bgmi h1{
+    font-weight: bolder;
+}

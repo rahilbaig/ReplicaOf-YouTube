@@ -1,0 +1,12 @@
+.pagenotfound{
+    text-align: center;
+    margin-top: 10%;
+}
+.pagenotfound a{
+    text-decoration: none;
+    border: 1px solid red;
+    padding: 8px 10px;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+}

@@ -1,0 +1,29 @@
+.vid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 11%;
+}
+.block{
+    margin: 15px;
+}
+.block img{
+    border-radius: 10px;
+}
+.block p{
+    margin: 0;
+}
+.block h3{
+    margin: 0;
+}
+.abcd{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.block:hover{
+    transform: scaleX(1.1);
+    transition: 2s;
+}

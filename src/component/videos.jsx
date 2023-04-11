@@ -1,0 +1,135 @@
+import { useEffect, useState } from 'react';
+import '../styles/videos.css'
+import Videocard from './videocard';
+
+const Videos = () => {
+    // let videodata = [
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/cX-SQ4GGL4Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBfmxiBuVRLFHkoJG_0VAtcxDOQ0Q",
+    //         titel: "using Spring MVC+JDBC",
+    //         channelname: "codewithnaval",
+    //         views: 5,
+    //         id: "1"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/KbDQX1VU77A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDB8fYDOiWnSi_ClWu89XlpyMVf-w",
+    //         titel: "Best moment on internate",
+    //         channelname: "filmyhook",
+    //         views: 10,
+    //         id: "2"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/Yl13flZp6cc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6_tcdkmjqbbfo0d7XiM3mdhExLQ",
+    //         titel: "Motu Patlu",
+    //         channelname: "VootKids",
+    //         views: 20,
+    //         id: "3"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/XT0nNuSDW8w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUapE8r-e6Wv6EP0oS80fQLS5ZJQ",
+    //         titel: "chicken noodles chinies hakka noodles",
+    //         channelname: "villageCooking",
+    //         views:28,
+    //         id: "4"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/qNSv9I0Flac/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsTSpi07rPUUZFUP-mrR9Co22ayg",
+    //         titel: "Jaadui song from tu jhooti mai makkar movie",
+    //         channelname: "T-Series",
+    //         views: 6,
+    //         id: "5"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/ZqFCn4Nia4o/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFEoTDAP&rs=AOn4CLBCAt486c20Ohq_Cp2EuQhUVcZciw",
+    //         titel: "mashup songs",
+    //         channelname: "music india",
+    //         views:25,
+    //         id: "6"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/sYwgg2FFgV4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBgQr_WUsearOvce0Kyv3iXhLZaA",
+    //         titel: "sikandari jhinga recipe",
+    //         channelname: "khao khana",
+    //         views: 10,
+    //         id: "7"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/BSPbF25_s8M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDKrZPuwNO3ZWkNdwg5_wk84pS1Q",
+    //         titel: "Dasara trailer",
+    //         channelname: "telugu movies",
+    //         views: 9,
+    //         id: "8"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/WYPGIhBr6pg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPcIvlICx_ednsHowOO3fgen3SAw",
+    //         titel: "siyan lofi song",
+    //         channelname: "songsindia",
+    //         views: 50,
+    //         id: "9"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/gHa0YlssZis/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA23nkKDALOSrME1Co-tN23SEopcQ",
+    //         titel: "Arijit biariya song",
+    //         channelname: "T-Series",
+    //         views: 100,
+    //         id: "10"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/AofU3Y9-FjE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0bLr9Dg_K9XYws7scq25g7oYKRQ",
+    //         titel: "tarak mehta ka ulta chashma",
+    //         channelname: "sony",
+    //         views: 22,
+    //         id: "11"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/NeXbmEnpSz0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7GwCNAMSrtCvDi6ch8h_hmj_OLw",
+    //         titel: "zara zara slow and reverb song",
+    //         channelname: "jairajmusic",
+    //         views:6,
+    //         id: "12"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/yIet1KtpagM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBkk5o3ZM1NmFhy_mOz3Ym4N3YdHg",
+    //         titel: "Chota bheem",
+    //         channelname: "Pogo",
+    //         views: 55,
+    //         id: "13"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/5lAFnzXGgxs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAj1MeuvyriHkHpsN8fBI9Jj6MvtQ",
+    //         titel: "Driving supra",
+    //         channelname: "abjhvj",
+    //         views:1,
+    //         id: "14"
+    //     },
+    //     {
+    //         thumbnail: "https://i.ytimg.com/vi/HHT-hqoNFEc/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLCnx255tV0dx5wgj0GDQMAdBxCoHg",
+    //         titel: "Grilled chicken",
+    //         channelname: "tandoori",
+    //         views: 3,
+    //         id: "15"
+    //     }
+
+    // ]
+
+    let[video,setvideo]=useState([])
+
+    useEffect(()=>{
+        let fetchdata= async ()=>{
+            let response= await fetch("http://localhost:4000/videodata")
+            let data= await response.json()
+            setvideo(data)
+        };
+        fetchdata();
+    },[])
+
+    
+    return (
+        <div className='vid'>
+            <Videocard abcd={video} />
+            <Videocard abcd={video.filter(x=>x.views>=20)}  />
+        </div>
+    );
+}
+
+export default Videos;
